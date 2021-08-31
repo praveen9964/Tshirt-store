@@ -1,0 +1,26 @@
+{% extends "./base.html" %}
+{% load crispy_forms_tags %}    <! crispy form for bootstrap effect >
+
+
+{% block content%}
+<div class="col-lg-4 mx-auto border rounded p-3 mt-4">
+    <form action="/login/" method="POST">
+     {% csrf_token %} 
+     <h1 class="display-4 text-center">Login Here</h1>     
+     <div class="text-center">
+     <img height="90px" src="https://www.linkpicture.com/q/logoff.jpg" alt="">
+     </div>
+     <hr>  
+     {{form|crispy}}
+     <div class="form-group text-center ">
+         <input class="btn btn-info "  type="submit" value="Login">     
+     </div>
+    </form>
+    <div class="text-center">
+        <div class="text-center btn btn-info"  >
+            <a  style="color:white" href="/signup">CREATE ACCOUNT</a>
+        </div>
+    </div>
+ 
+ </div>
+{% endblock %}
